@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lunar eclipse</title>
+    <style>
+      body {
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #f4dfc8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .universe {
+        /* margin: auto */
+        display: flex;
+
+        background-color: rgb(236, 179, 141);
+        width: 60vw;
+        aspect-ratio: 1;
+        z-index: 1;
+        border-radius: 20px;
+        justify-content: center;
+        animation: skychange 10s infinite alternate;
+      }
+      .sun {
+        width: 20vw;
+        aspect-ratio: 1;
+        background: #f4eae0;
+        align-self: center;
+        border-radius: 50%;
+        position: relative;
+        overflow: hidden;
+      }
+      .sun:after {
+        position: absolute;
+        content: ""; /* Add some content here */
+        display: block; /* Make it a block-level element */
+        width: 20vw;
+        aspect-ratio: 1;
+        background: orange;
+        border-radius: 50%;
+        z-index: 1;
+        animation: eclipse 10s infinite alternate;
+      }
+      /* Animations  */
+      @keyframes eclipse {
+        0% {
+          translate: 100%;
+        }
+        50% {
+          translate: 0%;
+          background: #313030;
+        }
+
+        60% {
+          translate: 0%;
+          scale: 0.9;
+        }
+        100% {
+          translate: -100%;
+        }
+      }
+      @keyframes skychange {
+        20% {
+          background-color: rgb(150, 107, 78);
+        }
+        30% {
+          background-color: rgb(110, 80, 61);
+        }
+        40% {
+          background-color: rgb(68, 49, 37);
+        }
+        50% {
+          background-color: #000000;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="universe">
+      <div class="sun"></div>
+    </div>
+  </body>
+</html>
